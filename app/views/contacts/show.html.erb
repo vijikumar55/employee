@@ -1,0 +1,17 @@
+<h5>Personal Information:</h5>
+<h3>First Name : <%= @contact.first_name %></h3>
+<h3>Last Name : <%= @contact.last_name %></h3>
+<h3>Email : <%= @contact.email %></h3>
+<h3>Age : <%= @contact.age %></h3></br>
+<h5>Address Details:</h5>
+<h3>Door No : <%= @address.door_no %></h3>
+<h3>Street : <%= @address.street %></h3>
+<h3>City : <%= @address.city %></h3>
+<h3>State : <%= @address.state %></h3>
+<h3>Country : <%= @address.country %></h3></br>
+<h5>Phone Number:</h5>
+<h3>Phone Number : <%= @phonenumber.phone_number %></h3></br>
+
+<a href="/contacts/<%=@contact.id %>/edit">Edit</a>
+<a href="/contacts">Back</a>
+

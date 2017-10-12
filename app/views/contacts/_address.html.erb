@@ -1,0 +1,15 @@
+<div class="address">
+<h5>Address Details:</h5>
+<%= fields_for :address do |f| %>
+  <%= f.label 'Door No' %>
+  <%=f.text_field :door_no, :required => true %></br>
+  <%= f.label 'Street' %>
+  <%=f.text_field :street %></br>
+  <%= f.label 'City' %>
+  <%=f.text_field :city %></br>
+  <%= f.label 'State' %>
+  <%=f.text_field :state %></br>
+  <%= f.label 'Country' %>
+  <%=f.text_field :country, :required => true%></br>
+  <%end%>
+  </div>

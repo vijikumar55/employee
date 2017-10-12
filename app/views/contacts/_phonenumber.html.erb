@@ -1,0 +1,13 @@
+<div class="phonenumber">
+<h5>Phone Number:</h5>
+<%= fields_for :phonenumber do |f| %>
+  <% if @phonenumber && @phonenumber.errors.any? %>
+    <% @phonenumber.errors.full_messages.each do |message| %>
+      <li class="errors"><%= message %></li>
+    <% end %>
+  <% end %>
+  <%= f.label 'Phone Number' %>
+  <%=f.text_field :phone_number, :required => true%></br>
+ <%end%>
+ </br>
+ </div>

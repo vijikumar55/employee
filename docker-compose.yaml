@@ -1,0 +1,31 @@
+---
+version: '3'
+# use with docker-compose up
+services:
+  employee:
+    container_name: employee
+    build: .
+    command: rails server -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/employee
+    ports:
+      - "3000:3000"
+    links:
+      - mysql:mysql
+  mysql:
+    container_name: mysql_container
+    image: mysql/mysql-server:5.7
+    hostname: mysql_container
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_container:/var/docker/mysql_container/
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=vijikumar
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=vijikumar
+      - MYSQL_DATABASE=employee
+volumes:
+  employee:
+  mysql_container:

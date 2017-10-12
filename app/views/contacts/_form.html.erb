@@ -1,0 +1,57 @@
+<div class="personal">
+<h5>Personal Information:</h5>
+<%= form_for @contact do |form| %>
+  <% if @contact.errors.any? %>
+    <% @contact.errors.full_messages.each do |message| %>
+      <li class="errors"><%= message %></li>
+    <% end %>
+  <% end %>
+  <%= form.label 'First Name' %>
+  <%= form.text_field :first_name, :required => true%></br>
+  <%= form.label 'Last Name' %>
+  <%= form.text_field :last_name %></br>
+  <%= form.label 'Email' %>
+  <%= form.text_field :email, :required => true%></br>
+  <%= form.label 'Age' %>
+  <%= form.text_field :age %></br>
+</div>
+  <%= render :partial => 'address' %>
+  <%= render :partial => 'phonenumber' %>
+</br>
+  <%= form.submit %>
+<% end -%>
+
+<style type="text/css">
+	label {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    padding-bottom: 10px;
+}
+
+input, label {
+    float:left;
+}
+
+.personal, .address, .phonenumber {
+    width: 500px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.personal{
+	height: 250px;
+}
+.address{
+	height: 250px;
+}
+.phonenumber{
+	height: 100px;
+}
+.errors{
+	color: red;
+}
+</style>
+
